@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="list-container">
+    <!--------------------------------- TOBPBAR -------------------------------->
+    <div class="list-topbar">
+      <div class="select-box">
+        <label for="selectOptions">Filter by:</label>
+        <select
+          required
+          id="selectOptions"
+          name="selectOptions"
+          class="select"
+          [(ngModel)]="selectOptions"
+        >
+          <option
+            *ngFor="let option of selectOptions"
+            [value]="option.id"
+            class="options"
+          >
+            {{ option.name }}
+          </option>
+        </select>
+        <button>Clear</button>
+      </div>
+      <div class="search-box">
+        <input
+          type="search"
+          name="course-search"
+          id="course-search"
+          placeholder="Search courses"
+        />
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </div>
+    </div>
+    <!------------------------------- END OF TOPBAR ---------------------------------------->
+    <!------------------------------ LIST TABLE HEADER ------------------------------------>
+    <div class="table-container">
+      <div class="table-row table-header">
+        <div class="table-row_left">
+          <div class="table-row_cell">ID</div>
+          <div class="table-row_cell">Image</div>
+          <div class="table-row_cell">Name</div>
+        </div>
+        <div class="table-row_right">
+          <div class="table-row_cell">Status</div>
+        </div>
+      </div>
+    </div>
+    <!------------------------------ END OF LIST TABLE HEADER ------------------------------------>
+    <!------------------------------ LIST TABLE ITEM ------------------------------------>
+    <div class="table-row">
+      <div class="table-row_left">
+        <div class="table-row_cell">10</div>
+        <div class="table-row_cell">
+          <img src="https://picsum.photos/100/100" alt="course image" />
+        </div>
+        <div class="table-row_cell">5 CS of Credit</div>
+      </div>
+      <div class="row-right">
+        <div class="table-row_cell status"><div>draft</div></div>
+      </div>
+    </div>
+    <!------------------------------ END OF LIST TABLE ITEM ------------------------------------>
+  </div>
+</div>
