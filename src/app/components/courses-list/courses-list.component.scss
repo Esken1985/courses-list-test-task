@@ -1,6 +1,6 @@
 .list-container {
   box-shadow: 0px 15px 30px rgba(210, 210, 211, 0.12);
-
+  padding-bottom: 100px;
 }
 
 .list-topbar {
@@ -65,8 +65,6 @@
   -webkit-flex-direction: row;
   flex-grow: 0;
   -webkit-flex-grow: 0;
-  flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
@@ -76,6 +74,7 @@
   background-color: #ffffff;
   border-bottom: 2px solid rgb(202, 201, 201);
   align-items: center;
+  text-align: start;
 }
 
 .table-header {
@@ -92,18 +91,36 @@
 }
 
 .table-row_right {
+  max-width: 180px;
+  width: 100%;
   display: flex;
   align-items: center;
+  text-align: start;
+  & .fa-info{
+    color: #ffffff;
+    background-color: #5f5fe0;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .status {
   text-transform: uppercase;
+  text-align: start;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
 
   & div {
     width: fit-content;
     border: 1px solid green;
     padding: 10px;
     border-radius: 5px;
+    text-align: start;
   }
 }
 
@@ -115,6 +132,7 @@
   text-overflow: ellipsis;
   padding-right: 20px;
   min-width: 180px;
+  text-align: start;
 
   &:first-child {
     min-width: 80px;
@@ -125,4 +143,5 @@
     width: 100%;
     max-height: 75px;
   }
+
 }

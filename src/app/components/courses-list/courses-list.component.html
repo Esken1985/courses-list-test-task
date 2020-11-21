@@ -58,8 +58,9 @@
         </div>
         <div class="table-row_cell">{{course.name}}</div>
       </div>
-      <div class="row-right">
+      <div class="table-row_right">
         <div class="table-row_cell status"><div>{{course.status}}</div></div>
+        <a [routerLink]="['/:', courses.id]"><i class="fa fa-info" aria-hidden="true"></i></a>
       </div>
     </div>
     <!------------------------------ END OF LIST TABLE ITEM ------------------------------------>
