@@ -9,12 +9,13 @@ import { CoursesListServiceService } from './courses-list.service';
 export class CoursesListComponent implements OnInit {
   
   public courses = [];
-
+  public errorMsg;
   constructor(private _coursesListService: CoursesListServiceService) { }
 
   ngOnInit(): void {
     this._coursesListService.getCourses()
-      .subscribe(data => this.courses = data)
+      .subscribe(data => this.courses = data,
+                error => this.errorMsg = error)
   }
 
 }
