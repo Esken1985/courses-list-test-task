@@ -34,6 +34,9 @@
   margin-right: 15px;
   font-size: 16px;
   color: black;
+   &:disabled{
+     color: gray;
+   }
 }
 
 .search-box {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SelectOptions } from './../../models/selectOptions.model';
+import { CoursesListServiceService } from './courses-list.service';
 
 @Component({
   selector: 'app-courses-list',
@@ -7,13 +7,14 @@ import { SelectOptions } from './../../models/selectOptions.model';
   styleUrls: ['./courses-list.component.scss']
 })
 export class CoursesListComponent implements OnInit {
-  selectOptions: SelectOptions[] = [
-    {id: 1, name: "Draft"},
-    {id: 2, name: "Published"},
-  ]
-  constructor() { }
+  
+  public courses = [];
+
+  constructor(private _coursesListService: CoursesListServiceService) { }
 
   ngOnInit(): void {
+    this._coursesListService.getCourses()
+      .subscribe(data => this.courses = data)
   }
 
 }

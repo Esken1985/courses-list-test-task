@@ -9,15 +9,10 @@
           id="selectOptions"
           name="selectOptions"
           class="select"
-          [(ngModel)]="selectOptions"
         >
-          <option
-            *ngFor="let option of selectOptions"
-            [value]="option.id"
-            class="options"
-          >
-            {{ option.name }}
-          </option>
+          <option value="" disabled selected>Course Status</option>
+          <option value="draft">Draft</option>
+          <option value="published">Published</option>
         </select>
         <button>Clear</button>
       </div>
@@ -47,16 +42,16 @@
     </div>
     <!------------------------------ END OF LIST TABLE HEADER ------------------------------------>
     <!------------------------------ LIST TABLE ITEM ------------------------------------>
-    <div class="table-row">
+    <div class="table-row" *ngFor="let course of courses">
       <div class="table-row_left">
-        <div class="table-row_cell">10</div>
+        <div class="table-row_cell">{{course.id}}</div>
         <div class="table-row_cell">
-          <img src="https://picsum.photos/100/100" alt="course image" />
+          <img src={{course.imageUrl}} alt="course image" />
         </div>
-        <div class="table-row_cell">5 CS of Credit</div>
+        <div class="table-row_cell">{{course.name}}</div>
       </div>
       <div class="row-right">
-        <div class="table-row_cell status"><div>draft</div></div>
+        <div class="table-row_cell status"><div>{{course.status}}</div></div>
       </div>
     </div>
     <!------------------------------ END OF LIST TABLE ITEM ------------------------------------>
