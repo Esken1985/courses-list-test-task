@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     HttpClientModule,
     FormsModule, 
-    CommonModule
+    CommonModule,
   ],
   providers: [CoursesListServiceService],
   bootstrap: [AppComponent]

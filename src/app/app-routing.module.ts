@@ -4,17 +4,20 @@ import { CoursesItemComponent } from './components/courses-item/courses-item.com
 import { CoursesListComponent } from './components/courses-list/courses-list.component';
 
 const routes: Routes = [
-  // {
-  //   path: '/:id', component: CoursesItemComponent
-  // },
   {
-    path: '', component: CoursesListComponent
+    path: 'item',
+    component: CoursesItemComponent
   },
+  {
+    path: '',
+    component: CoursesListComponent
+  },
+  
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
-export const routingComponents = [CoursesListComponent, CoursesItemComponent]
+export class AppRoutingModule {}
+export const routingComponents = [CoursesListComponent, CoursesItemComponent];
