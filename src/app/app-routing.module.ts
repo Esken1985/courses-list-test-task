@@ -5,12 +5,12 @@ import { CoursesListComponent } from './components/courses-list/courses-list.com
 
 const routes: Routes = [
   {
-    path: 'item',
-    component: CoursesItemComponent
-  },
-  {
     path: '',
     component: CoursesListComponent
+  },
+  {
+    path: 'courses/:id',
+    component: CoursesItemComponent
   },
   
 ];

@@ -9,10 +9,10 @@
           id="selectOptions"
           name="selectOptions"
           class="select"
+          [(ngModel)]="statusSelected"
+          (ngModelChange)="onStatusSelected($event)"
         >
-          <option value="" disabled selected>Course Status</option>
-          <option value="draft">Draft</option>
-          <option value="published">Published</option>
+          <option *ngFor="let status of statusOption" [value]="status.Name"> {{status.Name}} </option>
         </select>
         <button>Clear</button>
       </div>
@@ -50,17 +50,16 @@
 
 
     <!------------------------------ LIST TABLE ITEM ------------------------------------>
-    <div class="table-row" *ngFor="let course of courses">
+    <div class="table-row" *ngFor="let course of filteredCourses">
       <div class="table-row_left">
         <div class="table-row_cell">{{course.id}}</div>
         <div class="table-row_cell">
           <img src={{course.imageUrl}} alt="course image" />
         </div>
-        <div class="table-row_cell">{{course.name}}</div>
+        <div class="table-row_cell"><a [routerLink]="['/courses/' + course.id]">{{course.name}}</a></div>
       </div>
       <div class="table-row_right">
         <div class="table-row_cell status"><div>{{course.status}}</div></div>
-        <a [routerLink]="['/:', courses.id]"><i class="fa fa-info" aria-hidden="true"></i></a>
       </div>
     </div>
     <!------------------------------ END OF LIST TABLE ITEM ------------------------------------>

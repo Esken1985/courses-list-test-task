@@ -36,7 +36,7 @@ app.get("/getData", (req, res) => {
       ],
     },
     {
-      id: 3,
+      id: 359,
       name: "Forensic Accounting and Fraud Examination",
       imageUrl: "https://picsum.photos/100/100",
       status: "DRAFT",
@@ -52,7 +52,7 @@ app.get("/getData", (req, res) => {
       ],
     },
     {
-      id: 4,
+      id: 45,
       name: "Think like a CFO",
       imageUrl: "https://picsum.photos/100/100",
       status: "DRAFT",
@@ -64,7 +64,7 @@ app.get("/getData", (req, res) => {
       ],
     },
     {
-      id: 5,
+      id: 875,
       name: "Formal Financial Accounting",
       imageUrl: "https://picsum.photos/100/100",
       status: "PUBLISHED",
@@ -76,7 +76,7 @@ app.get("/getData", (req, res) => {
       ],
     },
     {
-      id: 6,
+      id: 6767768,
       name: "Business Foundations",
       imageUrl: "https://picsum.photos/100/100",
       status: "PUBLISHED",
@@ -92,7 +92,7 @@ app.get("/getData", (req, res) => {
       ],
     },
     {
-      id: 7,
+      id: 7686,
       name: "Accounting and Finance For IT Specialists",
       imageUrl: "https://picsum.photos/100/100",
       status: "DRAFT",
@@ -108,7 +108,7 @@ app.get("/getData", (req, res) => {
       ],
     },
     {
-      id: 8,
+      id: 8678,
       name: "Business Analytics",
       status: "PUBLISHED",
       imageUrl: "https://picsum.photos/100/100",

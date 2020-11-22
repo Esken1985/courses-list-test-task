@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http'
-import { ICourses } from './../../courses';
+import { ICourses } from '../../../classes/courses';
 import { Observable, throwError } from 'rxjs';
-import {catchError} from "rxjs/operators/"
+import {catchError, map} from "rxjs/operators"
 
 
 @Injectable({
@@ -18,4 +18,10 @@ export class CoursesListServiceService {
   errorHandler(error: HttpErrorResponse){
       return throwError(error.message || "Server Error")
   }
+
+// ******************GET SINGLE COURSE **************
+  getSingleCourse(id: number): Observable<ICourses>{
+    return this.http.get<ICourses>('/api/getData' + "/" + id)
+  }
+
 }
