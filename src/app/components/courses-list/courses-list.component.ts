@@ -13,6 +13,16 @@ export class CoursesListComponent implements OnInit {
   statusOption: StatusOption[];
   statusSelected: String;
 
+  private _searchTerm: string;
+  get searchTerm(): string {
+    return this._searchTerm;
+  }
+  set searchTerm(value: string) {
+    this._searchTerm = value;
+    this.filteredCourses = this.filterCoursesBySearch(value);
+  }
+
+
   courses: ICourses[];
   filteredCourses: ICourses[];
 
@@ -20,9 +30,10 @@ export class CoursesListComponent implements OnInit {
   constructor(private _coursesListService: CoursesListServiceService) {}
 
   onStatusSelected(val: string) {
-      this.filteredCourses = this.filterCourses(val);
+      this.filteredCourses = this.filterCoursesByOption(val);
   }
-  filterCourses(filterString: string) {
+
+  filterCoursesByOption(filterString: string) {
     if(filterString === "Course Status") {
       return this.courses
     } else {
@@ -30,6 +41,11 @@ export class CoursesListComponent implements OnInit {
         course.status.toLowerCase() === filterString.toLowerCase()
       );
     }
+  }
+
+  filterCoursesBySearch(searchStrng: string) {
+    return this.courses.filter(course =>
+      course.name.toLowerCase().indexOf(searchStrng.toLowerCase()) !== -1);
   }
   
   ngOnInit(): void {
