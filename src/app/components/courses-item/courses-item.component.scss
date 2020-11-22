@@ -18,11 +18,12 @@
 .name {
     max-width: 450px;
     width: 100%;
+    min-height: 42px;
     background-color:  #e6e6e6;
     color: lightslategrey;
     margin-left: 30px;
     padding: 10px 0px 10px 10px;
-    font-size: 16px;
+    font-size: 20px;
     border-radius: 5px;
 }
 .flex-left{
@@ -46,5 +47,8 @@
     border-radius: 5px;
     padding: 10px 0px 10px 10px;
     color: lightslategrey;
-    font-size: 16px;
+    font-size: 18px;
+    & option {
+        font-size: 18px;
+    }
 }

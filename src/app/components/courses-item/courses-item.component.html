@@ -3,24 +3,24 @@
         <div class="flex-left">
             <div class="item-name">
                 <p class="label">Course Name</p>
-                <h3 class="name">{{item.name}}</h3>
+                <h3 class="name">{{course.name}}</h3>
             </div>
             <div class="item-image">
                 <p class="label">Course card image</p>
-                <div class="image"><img src="" alt="" /></div>
+                <div class="image"><img src={{course.images[0]}} alt="image" /></div>
             </div>
         </div>
         <div class="flex-right">
             <div class="item-status">
                 <p class="label">Course Status</p>
                 <select name="status" id="status" class="select">
-                    <option value="draft">DRAFT</option>
+                    <option value="draft">{{course.status}}</option>
                 </select>
             </div>
             <div class="item-instructor">
                 <p class="label">Instructor</p>
                 <select name="status" id="status" class="select">
-                    <option value="draft">John Connor</option>
+                    <option *ngFor="let inst of course.instructors" [value]="inst">{{inst.name}}</option>
                 </select>
             </div>
         </div>

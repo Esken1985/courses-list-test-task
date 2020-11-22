@@ -9,11 +9,11 @@ import {catchError, map} from "rxjs/operators"
   providedIn: 'root'
 })
 export class CoursesListServiceService {
-
+  private _url: string = "https://my-json-server.typicode.com/Esken1985/mockDB/courses"
   constructor(private http: HttpClient) {}
 
   getCourses(): Observable<ICourses[]>{
-    return this.http.get<ICourses[]>('/api/getData').pipe(catchError(this.errorHandler));
+    return this.http.get<ICourses[]>(this._url).pipe(catchError(this.errorHandler));
   }
   errorHandler(error: HttpErrorResponse){
       return throwError(error.message || "Server Error")
@@ -21,7 +21,9 @@ export class CoursesListServiceService {
 
 // ******************GET SINGLE COURSE **************
   getSingleCourse(id: number): Observable<ICourses>{
-    return this.http.get<ICourses>('/api/getData' + "/" + id)
+    return (
+      this.http.get<ICourses>(this._url + "/" + id)
+    )
   }
 
 }

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CoursesListServiceService } from './courses-list.service';
 import { ICourses } from './../../../classes/courses';
 import { StatusOption } from './../../../classes/statusOption';
-import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-courses-list',

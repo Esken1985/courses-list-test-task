@@ -10,7 +10,7 @@ import { CoursesListServiceService } from './../courses-list/courses-list.servic
 })
 export class CoursesItemComponent implements OnInit {
   id: number;
-  item;
+  course;
   constructor(private _coursesListService: CoursesListServiceService,
               private route: ActivatedRoute) { }
   
@@ -25,8 +25,8 @@ export class CoursesItemComponent implements OnInit {
     )
     .subscribe(courseId => {
       this.id = courseId;
-      this._coursesListService.getSingleCourse(this.id).subscribe(item => {
-        this.item = item;
+      this._coursesListService.getSingleCourse(this.id).subscribe(course => {
+        this.course = course;
       })
     })
   }
