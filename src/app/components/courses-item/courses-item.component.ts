@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { CoursesListServiceService } from './../courses-list/courses-list.service';
 
@@ -12,11 +12,16 @@ export class CoursesItemComponent implements OnInit {
   id: number;
   course;
   constructor(private _coursesListService: CoursesListServiceService,
-              private route: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              private router: Router) { }
   
+  goBack(){
+    this.router.navigate(['../../'],
+    {relativeTo: this.activatedRoute});
+  }  
 
   ngOnInit(): void {
-    this.route.paramMap
+    this.activatedRoute.paramMap
     .pipe(
       map((param: ParamMap) => {
         //@ts-ignore

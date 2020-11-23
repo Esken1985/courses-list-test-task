@@ -96,7 +96,12 @@ h6 {
 /*--------------------*/
 
 .container {
-    max-width: 1240px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0px 15px;
   }
-  
+  @media screen and (max-width:1200px){
+    .container {
+      max-width: 970px;
+    }
+  }
